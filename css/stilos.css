@@ -1,297 +1,314 @@
-                                                                            :root {
-                                                                               --fuentePrincipal: 'Staatliches', cursive;
-                                                                               --primario: #9c27b0;
-                                                                               --primarioOscuro: #89119d;
-                                                                               --secundario: #ffce00;
-                                                                           }
-                                                                           
-                                                                           html {
-                                                                               font-size: 62.5%;
-                                                                               box-sizing: border-box;
-                                                                           }
-                                                                           
-                                                                           *,
-                                                                           *::before,
-                                                                           *:after {
-                                                                               box-sizing: inherit;
-                                                                           }
-                                                                           
-                                                                           body {
-                                                                               background-color: var(--primario);
-                                                                               line-height: 2;
-                                                                               font-size: 2rem;
-                                                                           }
-                                                                           
-                                                                           body.footer-hijo {
-                                                                               display: flex;
-                                                                               flex-direction: column;
-                                                                               min-height: 100vh;
-                                                                           }
-                                                                           
-                                                                           body.footer-hijo main {
-                                                                               flex: 1;
-                                                                           }
-                                                                           
-                                                                           .barra {
-                                                                               background-color: var(--primarioOscuro);
-                                                                               padding: 1rem 0;
-                                                                           }
-                                                                           
-                                                                           h1 {
-                                                                               color: var(--secundario);
-                                                                               text-align: center;
-                                                                               font-size: 4rem;
-                                                                               font-family: var(--fuentePrincipal);
-                                                                           }
-                                                                           
-                                                                           p {
-                                                                               font-family: Arial, Helvetica, sans-serif;
-                                                                               font-size: 1.8rem;
-                                                                               color: white;
-                                                                           }
-                                                                           
-                                                                           .contenedor {
-                                                                               max-width: 1100px;
-                                                                               width: 95%;
-                                                                               margin: 0 auto;
-                                                                           }
-                                                                           
-                                                                           img {
-                                                                               max-width: 100%;
-                                                                               cursor: pointer;
-                                                                               transition: all .5s ease-in-out;
-                                                                               -webkit-transition: all .5s ease-in-out;
-                                                                               -moz-transition: all .5s ease-in-out;
-                                                                               -ms-transition: all .5s ease-in-out;
-                                                                               -o-transition: all .5s ease-in-out;
-                                                                           }
-                                                                           
-                                                                           img:hover {
-                                                                               cursor: pointer;
-                                                                               transform: scale(1.2);
-                                                                               -webkit-transform: scale(1.2);
-                                                                               -moz-transform: scale(1.2);
-                                                                               -ms-transform: scale(1.2);
-                                                                               -o-transform: scale(1.2);
-                                                                           }
-                                                                           
-                                                                           .header {
-                                                                               display: grid;
-                                                                               justify-content: center;
-                                                                               padding: 3rem 0;
-                                                                           }
-                                                                           
-                                                                           .barra .nav {
-                                                                               display: grid;
-                                                                               grid-template-columns: repeat(2, 1fr);
-                                                                               grid-column: auto;
-                                                                           }
-                                                                           
-                                                                           .barra .nav a {
-                                                                               font-family: var(--fuentePrincipal);
-                                                                               text-decoration: none;
-                                                                               font-size: 3rem;
-                                                                               color: white;
-                                                                               text-align: center;
-                                                                           }
-                                                                           
-                                                                           .barra .nav a:hover {
-                                                                               color: var(--secundario);
-                                                                           }
-                                                                           
-                                                                           .lista-productos {
-                                                                               display: block;
-                                                                               grid-gap: 2rem;
-                                                                           }
-                                                                           
-                                                                           @media (min-width: 480px) {
-                                                                               .lista-productos {
-                                                                                   grid-template-columns: repeat(2, 1fr);
-                                                                                   display: grid;
-                                                                               }
-                                                                           }
-                                                                           
-                                                                           @media (min-width: 768px) {
-                                                                               .lista-productos {
-                                                                                   grid-template-columns: repeat(3, 1fr);
-                                                                               }
-                                                                           }
-                                                                           
-                                                                           .imagen-producto {
-                                                                               width: 100%;
-                                                                           }
-                                                                           
-                                                                           .producto {
-                                                                               background-color: var(--primarioOscuro);
-                                                                               padding: 2rem;
-                                                                           }
-                                                                           
-                                                                           .contenido-producto p {
-                                                                               font-family: var(--fuentePrincipal);
-                                                                               margin: 1rem 0;
-                                                                               color: white;
-                                                                               text-align: center;
-                                                                           }
-                                                                           
-                                                                           .contenido-producto .titulo {
-                                                                               font-size: 4rem;
-                                                                           }
-                                                                           
-                                                                           .contenido-producto .precio {
-                                                                               font-size: 3.3rem;
-                                                                               color: var(--secundario);
-                                                                           }
-                                                                           
-                                                                           .grafico {
-                                                                               min-height: 300px;
-                                                                               grid-column: 1 / 3;
-                                                                               background-size: cover;
-                                                                               background-position: center center;
-                                                                           }
-                                                                           
-                                                                           .grafico-1 {
-                                                                               background-image: url(../img/grafico1.jpg);
-                                                                               grid-row: 2 /3;
-                                                                               max-width: 100%;
-                                                                           }
-                                                                           
-                                                                           .grafico-2 {
-                                                                               background-image: url(../img/grafico2.jpg);
-                                                                               grid-row: 8 /9;
-                                                                           }
-                                                                           
-                                                                           @media (min-width: 768px) {
-                                                                               .grafico-2 {
-                                                                                   background-image: url(../img/grafico2.jpg);
-                                                                                   grid-row: 5 /6;
-                                                                                   grid-column: 2 / 4;
-                                                                               }
-                                                                           }
-                                                                           
-                                                                           @media (min-width: 768px) {
-                                                                               .contenedor-informacion {
-                                                                                   display: grid;
-                                                                                   grid-template-columns: repeat(2, 1fr);
-                                                                                   grid-gap: 2rem;
-                                                                               }
-                                                                           }
-                                                                           
-                                                                           .footer {
-                                                                               background-color: var(--primarioOscuro);
-                                                                               padding: 1rem 0;
-                                                                               margin-top: 2rem;
-                                                                           }
-                                                                           
-                                                                           .copyrigh {
-                                                                               font-family: Georgia, 'Times New Roman', Times, serif;
-                                                                               text-align: center;
-                                                                               font-size: 2rem;
-                                                                           }
-                                                                           
-                                                                           span {
-                                                                               color: var(--secundario);
-                                                                               font-family: Georgia, 'Times New Roman', Times, serif;
-                                                                               font-weight: 900;
-                                                                               font-size: 3rem;
-                                                                           }
-                                                                           
-                                                                           .formulario-pedido {
-                                                                               display: grid;
-                                                                               grid-template-columns: repeat(3, 1fr);
-                                                                               grid-template-rows: repeat(2, 6rem);
-                                                                               grid-gap: 1rem;
-                                                                           }
-                                                                           
-                                                                           .campo {
-                                                                               background-color: transparent;
-                                                                               font-family: var(--fuentePrincipal);
-                                                                               color: white;
-                                                                               padding: 1rem;
-                                                                               font-size: 2rem;
-                                                                               width: 100%;
-                                                                               border: 5px solid white;
-                                                                           }
-                                                                           
-                                                                           .campo:hover {
-                                                                               cursor: pointer;
-                                                                           }
-                                                                           
-                                                                           .talla {
-                                                                               -webkit-appearance: none;
-                                                                               grid-column: 1/3;
-                                                                           }
-                                                                           
-                                                                           .botos {
-                                                                               font-family: var(--fuentePrincipal);
-                                                                               text-align: center;
-                                                                               color: black;
-                                                                               background-color: var(--secundario);
-                                                                               border-radius: none;
-                                                                               font-size: 2rem;
-                                                                               grid-column: 1/4;
-                                                                           }
-                                                                           
-                                                                           .botos:hover {
-                                                                               cursor: pointer;
-                                                                           }
-                                                                           
-                                                                            ::placeholder {
-                                                                               color: var(--primarioOscuro);
-                                                                               font-weight: bold;
-                                                                               font-size: .6em;
-                                                                           }
-                                                                           
-                                                                           .talla-campo {
-                                                                               text-transform: uppercase;
-                                                                           }
-                                                                           
-                                                                           .cantidad-camisa {
-                                                                               color: var(--secundario);
-                                                                               font-size: 2.5rem;
-                                                                               text-align: center;
-                                                                               font-weight: 900;
-                                                                           }
-                                                                           
-                                                                           input {
-                                                                               padding: 1.5rem;
-                                                                               color: var(--primarioOscuro);
-                                                                               width: 100%;
-                                                                               background-color: var(--secundario);
-                                                                               font-weight: 900;
-                                                                               font-size: 2.5rem;
-                                                                               text-align: center;
-                                                                               border: none;
-                                                                               cursor: pointer;
-                                                                           }
-                                                                           
-                                                                           input:hover {
-                                                                               background-color: white;
-                                                                               color: var(--secundario)
-                                                                           }
-                                                                           
-                                                                           .suma-productos {
-                                                                               display: flex;
-                                                                               justify-content: space-between;
-                                                                               align-items: flex-end;
-                                                                               background-color: var(--secundario);
-                                                                               border: 3px solid white;
-                                                                               border-radius: 10px;
-                                                                               -webkit-border-radius: 10px;
-                                                                               -moz-border-radius: 10px;
-                                                                               -ms-border-radius: 10px;
-                                                                               -o-border-radius: 10px;
-                                                                           }
-                                                                           
-                                                                           .calcular {
-                                                                               flex-basis: calc(50%);
-                                                                           }
-                                                                           
-                                                                           .pagar {
-                                                                               flex-basis: calc(50%);
-                                                                           }
-                                                                           
-                                                                           .pagar p {
-                                                                               font-size: 2.5rem;
-                                                                               color: var(--primario);
-                                                                               font-weight: 900;
-                                                                           }
+                         :root {
+                            --fuentePrincipal: 'Staatliches', cursive;
+                            --primario: #9c27b0;
+                            --primarioOscuro: #89119d;
+                            --secundario: #ffce00;
+                        }
+                        
+                        html {
+                            font-size: 62.5%;
+                            box-sizing: border-box;
+                        }
+                        
+                        *,
+                        *::before,
+                        *:after {
+                            box-sizing: inherit;
+                        }
+                        
+                        body {
+                            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+                            line-height: 2;
+                            font-size: 2rem;
+                        }
+                        
+                        @media (min-width: 768px) {
+                            body {
+                                background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+                            }
+                        }
+                        
+                        body.footer-hijo {
+                            display: flex;
+                            flex-direction: column;
+                            min-height: 100vh;
+                        }
+                        
+                        body.footer-hijo main {
+                            flex: 1;
+                        }
+                        
+                        .barra {
+                            background-color: var(--primarioOscuro);
+                            padding: 1rem 0;
+                        }
+                        
+                        h1 {
+                            color: var(--secundario);
+                            text-align: center;
+                            font-size: 4rem;
+                            font-family: var(--fuentePrincipal);
+                        }
+                        
+                        p {
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 1.8rem;
+                            color: white;
+                        }
+                        
+                        .contenedor {
+                            max-width: 1100px;
+                            width: 95%;
+                            margin: 0 auto;
+                        }
+                        
+                        img {
+                            max-width: 100%;
+                            cursor: pointer;
+                            transition: all .5s ease-in-out;
+                            -webkit-transition: all .5s ease-in-out;
+                            -moz-transition: all .5s ease-in-out;
+                            -ms-transition: all .5s ease-in-out;
+                            -o-transition: all .5s ease-in-out;
+                        }
+                        
+                        img:hover {
+                            cursor: pointer;
+                            transform: scale(1.2);
+                            -webkit-transform: scale(1.2);
+                            -moz-transform: scale(1.2);
+                            -ms-transform: scale(1.2);
+                            -o-transform: scale(1.2);
+                        }
+                        
+                        .header {
+                            display: grid;
+                            justify-content: center;
+                            padding: 3rem 0;
+                        }
+                        
+                        .barra .nav {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-column: auto;
+                        }
+                        
+                        .barra .nav a {
+                            font-family: var(--fuentePrincipal);
+                            text-decoration: none;
+                            font-size: 3rem;
+                            color: white;
+                            text-align: center;
+                        }
+                        
+                        .barra .nav a:hover {
+                            color: var(--secundario);
+                        }
+                        
+                        .lista-productos {
+                            display: block;
+                            grid-gap: 2rem;
+                        }
+                        
+                        @media (min-width: 480px) {
+                            .lista-productos {
+                                grid-template-columns: repeat(2, 1fr);
+                                display: grid;
+                            }
+                        }
+                        
+                        @media (min-width: 768px) {
+                            .lista-productos {
+                                grid-template-columns: repeat(3, 1fr);
+                            }
+                        }
+                        
+                        .imagen-producto {
+                            width: 100%;
+                        }
+                        
+                        .producto {
+                            background-color: var(--primarioOscuro);
+                            padding: 2rem;
+                        }
+                        
+                        .contenido-producto p {
+                            font-family: var(--fuentePrincipal);
+                            margin: 1rem 0;
+                            color: white;
+                            text-align: center;
+                        }
+                        
+                        .contenido-producto .titulo {
+                            font-size: 4rem;
+                        }
+                        
+                        .contenido-producto .precio {
+                            font-size: 3.3rem;
+                            color: var(--secundario);
+                        }
+                        
+                        .grafico {
+                            min-height: 300px;
+                            grid-column: 1 / 3;
+                            background-size: cover;
+                            background-position: center center;
+                        }
+                        
+                        .grafico-1 {
+                            background-image: url(../img/grafico1.jpg);
+                            grid-row: 2 /3;
+                            max-width: 100%;
+                        }
+                        
+                        .grafico-2 {
+                            background-image: url(../img/grafico2.jpg);
+                            grid-row: 8 /9;
+                        }
+                        
+                        @media (min-width: 768px) {
+                            .grafico-2 {
+                                background-image: url(../img/grafico2.jpg);
+                                grid-row: 5 /6;
+                                grid-column: 2 / 4;
+                            }
+                        }
+                        
+                        @media (min-width: 768px) {
+                            .contenedor-informacion {
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                grid-gap: 2rem;
+                            }
+                        }
+                        
+                        .footer {
+                            background-color: var(--primarioOscuro);
+                            padding: 1rem 0;
+                            margin-top: 2rem;
+                        }
+                        
+                        .copyrigh {
+                            font-family: Georgia, 'Times New Roman', Times, serif;
+                            text-align: center;
+                            font-size: 2rem;
+                        }
+                        
+                        span {
+                            color: var(--secundario);
+                            font-family: Georgia, 'Times New Roman', Times, serif;
+                            font-weight: 900;
+                            font-size: 3rem;
+                        }
+                        
+                        .formulario-pedido {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-template-rows: repeat(2, 6rem);
+                            grid-gap: 1rem;
+                        }
+                        
+                        .campo {
+                            background-color: transparent;
+                            font-family: var(--fuentePrincipal);
+                            color: white;
+                            padding: 1rem;
+                            font-size: 2rem;
+                            width: 100%;
+                            border: 5px solid white;
+                        }
+                        
+                        .campo:hover {
+                            cursor: pointer;
+                        }
+                        
+                        .talla {
+                            -webkit-appearance: none;
+                            grid-column: 1/3;
+                        }
+                        
+                        .botos {
+                            font-family: var(--fuentePrincipal);
+                            text-align: center;
+                            color: black;
+                            background-color: var(--secundario);
+                            border-radius: none;
+                            font-size: 2rem;
+                            grid-column: 1/4;
+                        }
+                        
+                        .botos:hover {
+                            cursor: pointer;
+                        }
+                        
+                         ::placeholder {
+                            color: var(--primarioOscuro);
+                            font-weight: bold;
+                            font-size: .6em;
+                        }
+                        
+                        .talla-campo {
+                            text-transform: uppercase;
+                        }
+                        
+                        .cantidad-camisa {
+                            color: var(--secundario);
+                            font-size: 2.5rem;
+                            text-align: center;
+                            font-weight: 900;
+                        }
+                        
+                        input {
+                            padding: 1.5rem;
+                            color: var(--primarioOscuro);
+                            width: 100%;
+                            background-color: var(--secundario);
+                            font-weight: 900;
+                            font-size: 2.5rem;
+                            text-align: center;
+                            border: none;
+                            cursor: pointer;
+                        }
+                        
+                        input:hover {
+                            background-color: white;
+                            color: var(--secundario)
+                        }
+                        
+                        .suma-productos {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-end;
+                            background-color: var(--secundario);
+                            border: 3px solid white;
+                            border-radius: 10px;
+                            -webkit-border-radius: 10px;
+                            -moz-border-radius: 10px;
+                            -ms-border-radius: 10px;
+                            -o-border-radius: 10px;
+                        }
+                        
+                        .calcular {
+                            flex-basis: calc(50%);
+                        }
+                        
+                        .pagar {
+                            flex-basis: calc(50%);
+                        }
+                        
+                        .pagar p {
+                            font-size: 2.5rem;
+                            color: var(--primario);
+                            font-weight: 900;
+                        }
+                        
+                        .texto-nosotros p {
+                            color: var(--primarioOscuro);
+                            font-weight: 700;
+                        }
+                        
+                        .mapa iframe {
+                            background-color: green;
+                            height: 300px;
+                            width: 100%;
+                        }

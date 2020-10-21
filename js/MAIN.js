@@ -1,9 +1,7 @@
-alert("Bienvenido a nuestra tienda virtual");
 (function() {
     "use strict";
 
     document.addEventListener('DOMContentLoaded', function() {
-
 
 
             //Calcular montos de camisas
@@ -14,7 +12,7 @@ alert("Bienvenido a nuestra tienda virtual");
             var resumen = document.getElementById('resumen');
             var suma = document.getElementById('suma-total');
             var calcular = document.getElementById('calcular');
-            var error = document.getElementById('error');
+
 
 
             if (document.getElementById('calcular')) {
@@ -25,13 +23,19 @@ alert("Bienvenido a nuestra tienda virtual");
             function calcularMontos(event) {
                 event.preventDefault();
                 if (calcular.value >= 1) {
+
+
                     var cantidad1 = parseInt(cantidad1.value, 25) || 25,
                         cantidad2 = parseInt(cantidad2.value, 25) || 25,
                         cantidad3 = parseInt(cantidad3.value, 25) || 25;
 
                 } else {
-                    resumen.innerHTML = "debes elegir una cantidad";
-
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Oops... Ha ocurrido un error',
+                        text: 'Para poder realizar el calculo, deber seleccionar almenos un producto    !',
+                        footer: '<a href>Why do I have this issue?</a>'
+                    })
                 }
             };
             var totalPagar = (cantidad1 * 25) + (cantidad2 * 25) + (cantidad3 * 25);
