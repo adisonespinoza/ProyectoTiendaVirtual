@@ -4,37 +4,53 @@
     document.addEventListener('DOMContentLoaded', function() {
 
 
-            //Calcular montos de camisas
+        //Calcular montos de camisas
 
-            var cantidad1 = document.getElementById('cantidad1');
-            var cantidad2 = document.getElementById('cantidad2');
-            var cantidad3 = document.getElementById('cantidad3');
-            var resumen = document.getElementById('resumen');
-            var suma = document.getElementById('suma-total');
-            var calcular = document.getElementById('calcular');
+        var cantidad1 = document.getElementById('cantidad1');
+        var cantidad2 = document.getElementById('cantidad2');
+        var cantidad3 = document.getElementById('cantidad3');
+        var resumen = document.getElementById('resumen');
+        var suma = document.getElementById('suma-total');
+        var calcular = document.getElementById('calcular');
+        var total = document.getElementById('pagar');
 
 
+        total.addEventListener('click', function() {
+                if (total.value === ' ') {
+                    $alert('debes tomar producto')
+                }
+            })
+            //if (document.getElementById('calcular')) {
+        calcular.addEventListener('click', calcularMontos);
 
-            if (document.getElementById('calcular')) {
-                calcular.addEventListener('click', calcularMontos);
+        // }
 
+        function calcularMontos(event) {
+            event.preventDefault();
+            // console.log('has hecho clic');
+            if (calcular.value === '') {
+                alert('debes elegir un regalo');
+                calcular.focus();
+            } else {
+                console.log(cantidad1.value);
+                console.log(cantidad2.value);
+                console.log(cantidad3.value);
             }
+            /* Swal.fire({
+                 type: 'error',
+                 title: 'Oops... Ha ocurrido un error',
+                 text: 'Para poder realizar el calculo, deber seleccionar almenos un producto    !',
 
-            function calcularMontos(event) {
-                event.preventDefault();
-                if (calcular.value >= 1) {
+             })*/
 
 
-                    var cantidad1 = parseInt(cantidad1.value, 25) || 25,
-                        cantidad2 = parseInt(cantidad2.value, 25) || 25,
-                        cantidad3 = parseInt(cantidad3.value, 25) || 25;
 
-                } else {
+            /* } else {
                     Swal.fire({
                         type: 'error',
                         title: 'Oops... Ha ocurrido un error',
                         text: 'Para poder realizar el calculo, deber seleccionar almenos un producto    !',
-                        footer: '<a href>Why do I have this issue?</a>'
+
                     })
                 }
             };
@@ -58,8 +74,9 @@
             for (var i = 0; i < listadoProductos.length; i++) {
                 resumen.innerHTML += listadoProductos[i] + '</br>';
             }
-            suma.innerHTML = "$" + totalPagar;
-        }
+            suma.innerHTML = "$" + totalPagar;*/
 
-    );
+
+        };
+    })
 })();
