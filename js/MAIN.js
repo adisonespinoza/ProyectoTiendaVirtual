@@ -27,13 +27,35 @@
             var result = result;
             if (result) {
                 video.play();
+            } else {
+                video.ended();
             }
         })
         video.addEventListener('mouseover', function() {
             video.play();
         })
     });
-    //Calcular montos de camisas
+    //Menu fijo
+
+    var headerr = $('.fijo').height();
+    var barraAltura = $('.barra').innerHeight();
+    //console.log(headerr)
+    // console.log(barraAltura)
+    $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            // console.log(scroll);
+            if (scroll > '160') {
+                //   console.log('pasaste la pantalla')
+                $('.barra').addClass('fixed')
+                $('body').css({ 'margin-top': barraAltura + 'px' });
+
+            } else {
+                //console.log('aun no')
+                $('.barra').removeClass('fixed')
+                $('body').css({ 'margin-top': '0px' })
+            }
+        })
+        //Calcular montos de camisas
 
     var cantidad1 = document.getElementById('cantidad1');
     var cantidad2 = document.getElementById('cantidad2');
@@ -59,7 +81,6 @@
             type: 'error',
             title: 'Oops... Ha ocurrido un error',
             text: 'Para poder realizar el calculo, deber seleccionar almenos un producto    !',
-
         })
 
         calcular.addEventListener('click', calcularMontos);
@@ -69,7 +90,6 @@
 
             if (calcular === '') {
 
-                calcular.focus();
             } else {
                 var c1 = cantidad1.value,
                     c2 = cantidad2.value,
@@ -152,6 +172,8 @@
                 suma.innerHTML = "$" + totalPagar.toFixed(2);
 
             }
+
         };
+
     });
 })();
