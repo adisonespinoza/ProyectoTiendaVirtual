@@ -8,26 +8,27 @@
     <title>Front End Store</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="icon" href="img/favicon2.ico">
     <link rel="stylesheet" href="css/stilos.css">
 
 </head>
 
 <body>
-    <header class="header">
-        <img src="img/logo.png" alt="Logotipo">
-    </header>
+    <div class="fijo">
+        <header class="header">
+            <img src="img/logo.png" alt="Logotipo">
+        </header>
 
-    <div class="barra">
-        <div class="nav">
-            <a href="potreroDigital_proyecto_grupo2_inicio.html">Inicio</a>
-            <a href="potreroDigital_proyecto_grupo2_Nosotros.html">Nosotros</a>
+        <div class="barra">
+            <div class="nav">
+                <a href="potreroDigital_proyecto_grupo2_inicio.html">Inicio</a>
+                <a href="potreroDigital_proyecto_grupo2_Nosotros.html">Nosotros</a>
 
 
+            </div>
         </div>
     </div>
-
     <main class="contenedor">
         <h1>Sobre Nosotros</h1>
         <div class="contenedor-informacion">
@@ -46,17 +47,32 @@
 
     </main>
 
+
     <h1>Ubicación Geografica</h1>
     <div id="mapa" class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.034643853795!2d-58.41303358544161!3d-34.60328546498079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca8c854bd13f%3A0xfc0cf5c054da4aa1!2sAbasto%20Shopping!5e0!3m2!1ses-419!2sar!4v1603277523100!5m2!1ses-419!2sar"
-            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
-    <footer class="footer">
-        <p class="copyrigh">
+
+
+    <section>
+        <h1>Diseñando el Proyecto</h1>
+        <video class="video " id="viedeo" controls> 
+    
+     <source src="video/production ID_4895486.mp4 " type="video/mp4 ">
+       <source src="video/production ID_4895486.ogg " type="video/ogg ">
+        <source src="video/production ID_4895486.webm " type="video/webm ">
+     
+   </video >
+</section>
+    <footer class="footer ">
+        <p class="copyrigh ">
             Front-End Todos los Derechos Reservados. <span>Irene Herrera & Adison Espinoza 2020</span>
         </p>
     </footer>
+    <script src="js/jquery-1.12.0.min.js "></script>
 
+    <script src="js/MAIN.js "></script>
+    <script src="js/sweetalert2.all.min.js "></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js "></script>
 
 </body>
 
