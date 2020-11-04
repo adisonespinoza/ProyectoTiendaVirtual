@@ -76,104 +76,111 @@
     var calcular = document.getElementById('calcular');
     var total = document.getElementById('pagar');
 
-    total.addEventListener('click', function() {
-        Swal.fire({
-            type: 'error',
-            title: 'Oops... Ha ocurrido un error',
-            text: 'Para poder realizar el calculo, deber seleccionar almenos un producto    !',
-        })
+    calcular.addEventListener('click', calcularMontos);
 
-        calcular.addEventListener('click', calcularMontos);
+    function calcularMontos(e) {
+        e.preventDefault();
 
-        function calcularMontos(e) {
-            e.preventDefault();
+        if (calcular.value < suma.value) {
+            Swal.fire({
+                type: 'error',
+                title: 'Oops... Ha ocurrido un error',
+                text: 'Para poder realizar el calculo, deber seleccionar almenos un producto    !',
+            })
+        } else {
+            var c1 = cantidad1.value,
+                c2 = cantidad2.value,
+                c3 = cantidad3.value,
+                c4 = cantidad4.value,
+                c5 = cantidad5.value,
+                c6 = cantidad6.value,
+                c7 = cantidad7.value,
+                c8 = cantidad8.value,
+                c9 = cantidad9.value,
+                c10 = cantidad10.value,
+                c11 = cantidad11.value,
+                c12 = cantidad12.value,
+                c13 = cantidad13.value,
+                c14 = cantidad14.value;
+            var totalPagar = (c1 * 25) + (c2 * 25) + (c3 * 25) + (c4 * 25) + (c5 * 25) + (c6 * 25) + (c7 * 25) + (c8 * 25) + (c9 * 25) + (c10 * 25) + (c11 * 25) + (c12 * 25) + (c13 * 25) + (c14 * 25);
 
-            if (calcular === '') {
-
-            } else {
-                var c1 = cantidad1.value,
-                    c2 = cantidad2.value,
-                    c3 = cantidad3.value,
-                    c4 = cantidad4.value,
-                    c5 = cantidad5.value,
-                    c6 = cantidad6.value,
-                    c7 = cantidad7.value,
-                    c8 = cantidad8.value,
-                    c9 = cantidad9.value,
-                    c10 = cantidad10.value,
-                    c11 = cantidad11.value,
-                    c12 = cantidad12.value,
-                    c13 = cantidad13.value,
-                    c14 = cantidad14.value;
-                var totalPagar = (c1 * 25) + (c2 * 25) + (c3 * 25) + (c4 * 25) + (c5 * 25) + (c6 * 25) + (c7 * 25) + (c8 * 25) + (c9 * 25) + (c10 * 25) + (c11 * 25) + (c12 * 25) + (c13 * 25) + (c14 * 25);
-
-                var listadoProductos = [];
-                if (c1 >= 1) {
-                    listadoProductos.push(c1 + ' VueJs');
-
-                }
-                if (c2 >= 1) {
-                    listadoProductos.push(c2 + ' AngularJs');
-
-                }
-                if (c3 >= 1) {
-                    listadoProductos.push(c3 + ' React');
-
-                }
-                if (c4 >= 1) {
-                    listadoProductos.push(c4 + ' Redux');
-
-                }
-                if (c5 >= 1) {
-                    listadoProductos.push(c5 + ' NodeJs');
-
-                }
-                if (c6 >= 1) {
-                    listadoProductos.push(c6 + ' Sass');
-
-                }
-                if (c7 >= 1) {
-                    listadoProductos.push(c7 + ' HTML5');
-
-                }
-                if (c8 >= 1) {
-                    listadoProductos.push(c8 + ' GitHub');
-
-                }
-                if (c9 >= 1) {
-                    listadoProductos.push(c9 + ' Bulma');
-
-                }
-                if (c10 >= 1) {
-                    listadoProductos.push(c10 + ' TypeScript');
-
-                }
-                if (c11 >= 1) {
-                    listadoProductos.push(c11 + ' Drupal');
-
-                }
-                if (c12 >= 1) {
-                    listadoProductos.push(c12 + ' JavaScript');
-
-                }
-                if (c13 >= 1) {
-                    listadoProductos.push(c13 + ' GraphQL');
-
-                }
-                if (c14 >= 1) {
-                    listadoProductos.push(c14 + ' WordPress');
-
-                }
-                resumen.style.display = "block";
-                resumen.innerHTML = '';
-                for (var i = 0; i < listadoProductos.length; i++) {
-                    resumen.innerHTML += listadoProductos[i] + '</br>';
-                }
-                suma.innerHTML = "$" + totalPagar.toFixed(2);
+            var listadoProductos = [];
+            if (c1 >= 1) {
+                listadoProductos.push(c1 + ' VueJs');
 
             }
+            if (c2 >= 1) {
+                listadoProductos.push(c2 + ' AngularJs');
 
-        };
+            }
+            if (c3 >= 1) {
+                listadoProductos.push(c3 + ' React');
 
-    });
+            }
+            if (c4 >= 1) {
+                listadoProductos.push(c4 + ' Redux');
+
+            }
+            if (c5 >= 1) {
+                listadoProductos.push(c5 + ' NodeJs');
+
+            }
+            if (c6 >= 1) {
+                listadoProductos.push(c6 + ' Sass');
+
+            }
+            if (c7 >= 1) {
+                listadoProductos.push(c7 + ' HTML5');
+
+            }
+            if (c8 >= 1) {
+                listadoProductos.push(c8 + ' GitHub');
+
+            }
+            if (c9 >= 1) {
+                listadoProductos.push(c9 + ' Bulma');
+
+            }
+            if (c10 >= 1) {
+                listadoProductos.push(c10 + ' TypeScript');
+
+            }
+            if (c11 >= 1) {
+                listadoProductos.push(c11 + ' Drupal');
+
+            }
+            if (c12 >= 1) {
+                listadoProductos.push(c12 + ' JavaScript');
+
+            }
+            if (c13 >= 1) {
+                listadoProductos.push(c13 + ' GraphQL');
+
+            }
+            if (c14 >= 1) {
+                listadoProductos.push(c14 + ' WordPress');
+
+            }
+            resumen.style.display = "block";
+            resumen.innerHTML = '';
+            for (var i = 0; i < listadoProductos.length; i++) {
+                resumen.innerHTML += listadoProductos[i] + '</br>';
+            }
+            suma.innerHTML = "$" + totalPagar.toFixed(2);
+        }
+    };
+
+    total.addEventListener('click', function() {;
+
+        if (total.value === resumen.value) {
+            alert('va bien')
+        } else {
+            Swal.fire({
+                type: 'error',
+                title: 'Oops... Ha ocurrido un error',
+                text: 'Para poder realizar el calculo, deber seleccionar almenos un producto    !',
+            })
+        }
+
+    })
 })();
