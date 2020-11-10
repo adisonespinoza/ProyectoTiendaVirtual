@@ -2,6 +2,7 @@
     "use strict";
 
     document.addEventListener('DOMContentLoaded', function() {
+
         //Mapa Personalizado
         var map = L.map('mapa').setView([-34.603338, -58.410637], 14);
 
@@ -12,7 +13,9 @@
         L.marker([-34.603338, -58.410637]).addTo(map)
             .bindPopup('Mapa Personalizado por Irene & Adison.<br> Abasto Shopping CABA')
             .openPopup();
+
         //Evento del video
+
         const video = document.querySelector('.video')
         video.addEventListener('ended', function() {
             Swal.fire({
@@ -34,7 +37,10 @@
         video.addEventListener('mouseover', function() {
             video.play();
         })
-    });
+
+        video.style.cursor = 'pointer';
+    })
+
     //Menu fijo
 
     var headerr = $('.fijo').height();
@@ -42,20 +48,21 @@
     //console.log(headerr)
     // console.log(barraAltura)
     $(window).scroll(function() {
-            var scroll = $(window).scrollTop();
-            // console.log(scroll);
-            if (scroll > '160') {
-                //   console.log('pasaste la pantalla')
-                $('.barra').addClass('fixed')
-                $('body').css({ 'margin-top': barraAltura + 'px' });
+        var scroll = $(window).scrollTop();
+        // console.log(scroll);
+        if (scroll > '160') {
+            //   console.log('pasaste la pantalla')
+            $('.barra').addClass('fixed')
+            $('body').css({ 'margin-top': barraAltura + 'px' });
 
-            } else {
-                //console.log('aun no')
-                $('.barra').removeClass('fixed')
-                $('body').css({ 'margin-top': '0px' })
-            }
-        })
-        //Calcular montos de camisas
+        } else {
+            //console.log('aun no')
+            $('.barra').removeClass('fixed')
+            $('body').css({ 'margin-top': '0px' })
+        }
+    })
+
+    //Calcular montos de camisas
 
     var cantidad1 = document.getElementById('cantidad1');
     var cantidad2 = document.getElementById('cantidad2');
@@ -81,7 +88,7 @@
     function calcularMontos(e) {
         e.preventDefault();
 
-        if (calcular.value < suma.value) {
+        if (calcular === "") {
             Swal.fire({
                 type: 'error',
                 title: 'Oops... Ha ocurrido un error',
@@ -172,15 +179,18 @@
 
     total.addEventListener('click', function() {;
 
-        if (total.value === resumen.value) {
-            alert('va bien')
+        if (total === suma) {
+            Swal.fire({
+                type: 'success',
+                title: 'Gracias por su compra!!!',
+                text: 'En breves recibira supedido!',
+            })
         } else {
             Swal.fire({
                 type: 'error',
                 title: 'Oops... Ha ocurrido un error',
-                text: 'Para poder realizar el calculo, deber seleccionar almenos un producto    !',
+                text: 'Para poder realizar el calculo, deber seleccionar almenos un producto!',
             })
         }
-
     })
 })();
